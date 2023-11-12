@@ -150,6 +150,7 @@ final <- merge(
 
 final <- final[order(final$POS,final$POS1,final$POS2,final$POS3,final$POS4,decreasing = T),]
 final$POS_F <- 1:dim(final)[1]
+if(length(compe) != dim(final)[1]){"Hay algún participantes ausente"}
 final[,c(1,2,13,14,26)]
 
 write.xlsx(
