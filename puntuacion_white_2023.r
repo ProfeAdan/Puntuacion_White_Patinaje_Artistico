@@ -30,7 +30,7 @@ J1B <- c(53,51,46,42,56,48,46,51,49)
 J2B <- c(53,50,44,42,56,46,45,51,48)
 J3B <- c(54,50,45,43,56,47,46,52,49)
 
-nombre <- LETTERS[1:length(J1A)]
+nombre <- c(LETTERS,letters)[1:length(J1A)]
 
 d <- data.frame(nombre,J1A,J2A,J3A,J1B,J2B,J3B)
 d$SJ1 <- d$J1A+d$J1B
@@ -145,7 +145,7 @@ df <- merge(df,df2[c("nombre","MV4","POS4")],by = "nombre",all.x = T)
 df <- df[order(df$POS,df$POS1,df$POS2,df$POS3,df$POS4,decreasing = T),]
 
 final <- merge(
-  data.frame(nombre = LETTERS[1:length(compe)],Competidoras = compe,Academias = acad),
+  data.frame(nombre = c(LETTERS,letters)[1:length(compe)],Competidoras = compe,Academias = acad),
   df, by = "nombre")[,-c(1)]
 
 final <- final[order(final$POS,final$POS1,final$POS2,final$POS3,final$POS4,decreasing = T),]
